@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do menu de navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 5px;
+    z-index: 2000;
+}
+
+.nav-bar {
+    background-color: rgba(40,40,40,0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+    gap: 40px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 10px 2px black;
+    height: 50px;
+}
+
+.nav-bar:hover {
+    transform: scale(1.03);
+}
+
+.nav-logo {
+    background: url('./imgs/logo_rbr.png') center/contain no-repeat;
+    height: 100%;
+    width: 90px;
+}
+
+.nav-items ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-items ul li a:hover {
+    color: var(--bs-primary);
+}
+
+.nav-cell {
+    display: none;
+    position: fixed;
+    transition: all 0.3s ease;
+}
+
+/* Estilos das seções */
+section { /* Usado para definir o padrão de tamanho e display das sections */
+    padding: 10px;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-margin-top: 30vh;
+}
+
+.section-1 {
+    background-color: white;
+}
+
+.section-2 {
+    background-color: rgb(245, 245, 245);
+}
+
+.section-form {
+    background-color: rgb(40,40,40);
+    color: white;
+}
+
+/* Classes extras para usos especificos */
+.resize-off {
+    resize: none;
+}
+
+.red-text {
+    color:red
+}
+
+video {
+    border-radius: 10px; /* Arredonda as bordas dos videos */
+}
+
+/* Definição de estilo para cabeçalho (entrada do site) */
+.home-bg {
+    min-height: 100vh;
+    background: url('./imgs/wallpaper-redbull.jpg') center/contain no-repeat;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-bg h1 {
+    color: red;
+    font-weight: bold;
+}
+
+.home-bg h5 {
+    color: white;
+}
+
+/* Remover os pontos de listas padrão */
+#listas div ul {
+    list-style: none;
+}
+
+/* Cores da tabela */
+.table-line0 {
+    background-color: rgb(236, 236, 236);
+}
+
+.table-line1 {
+    background-color: rgb(245, 245, 245);
+}
+
+/* Estilos do card (bootstrap) */
+.card { /* Adiciona uma transição para ter um hover suave */
+    transition: all 0.3s ease;
+}
+
+.card-shadow { /* Adiciona uma sombra aos cards */
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover { /* Aumenta o tamanho do card ao passar por cima com mouse */
+    transform: scale(1.03)
+}
+
+
+/* Estilos do rodapé */
+footer {
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: rgb(236, 236, 236);
+    text-decoration: underline;
+}
+
+/* Código para ajustar os elementos da página para melhor visualização em celulares/tablets */
+@media screen and (max-width: 768px) {
+    .nav-bar { 
+      display: none; /* Esconde a barra de navegação padrão (browser) */
+    }
+
+    /* Estilos do menu de navegação para celular/tablet */
+    .nav-cell {
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 5px 20px 5px 20px;
+        z-index: 2000;
+    }
+
+    .cell-menu {
+        background-color: rgba(40, 40, 40, 0.9);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 5px 7px 5px 5px;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .cell-menu:hover {
+        transform: scale(1.05);
+    }
+
+    #nav-cell-menu {
+        overflow: hidden;
+        transition: opacity 0.5s ease, height 0.5s ease;
+        opacity: 1;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    #nav-cell-menu.escondido {
+        gap: 0px;
+        opacity: 0;
+        height: 0;
+        pointer-events: none;
+        margin-top: 0px;
+    }
+
+    .nav-cell-items ul {
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+    }
+
+    .nav-cell-items {
+        gap: 5px;
+    }
+
+    #galeria {
+        font-size: 12px;
+    }
+
+    .home-bg {
+        background: url('./imgs/wallpaper-redbull-mobile.jpg') center/cover no-repeat;
+    }
+
+    .home-bg h1 {
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    .home-bg h5 {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+  }
